@@ -2,10 +2,14 @@
 
 **NLP is all about playing with text or we can say analyzing text(basically working with text)**
 
-*text can be books,reviews,html text got from web scarping*...
-*it is a brach of ML*...
-*tools used:pandas(to read csv files),nltk(text prcressing library)*...
-*steming->grouping word eg:treating loved as love*...
+*text can be books,reviews,html text got from web scarping*
+
+*it is a brach of ML*
+
+*tools used:pandas(to read csv files),nltk(text prcressing library)*
+
+*steming->grouping word eg:treating loved as love*
+
 
 ## Steps to follow in NLTK:
 
