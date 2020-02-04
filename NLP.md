@@ -11,7 +11,7 @@
 *steming->grouping word eg:treating loved as love*
 
 
-## Steps to follow in NLTK:
+## Simple Steps to follow in NLP:
 
 suppose we are dealing with 'resturants reviews'
 
