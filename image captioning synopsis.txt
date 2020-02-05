@@ -1,0 +1,83 @@
+﻿SYNOPSIS
+
+
+ABSTRACT
+Automatically describing the content of an image is a fundamental problem in artiﬁcial intelligence that connects computer vision and natural language processing. In this project, we present a generative model based on a deep recurrent architecture that combines recent advances in computer vision and machine translation and that can be used to generate natural sentences describing an image. The model is trained to maximize the likelihood of the target description sentence given the training image. Experiments on several datasets show the accuracy of the model and the ﬂuency of the language it learns solely from image descriptions. Our model is often quite accurate, which we verify both qualitatively and quantitatively.
+The generation of captions from images has various practical benefits, ranging from aiding the visually impaired, to enabling the automatic and cost-saving labelling of the millions of images uploaded to the Internet every day.
+We describe how we can train this model in a deterministic manner using standard backpropagation techniques and stochastically by maximizing a variational lower bound. We also show through visualization how the model is able to automatically learn to ﬁx its gaze on salient objects while generating the corresponding words in the output sequence. We validate the use of attention with state-of-theart performance on three benchmark datasets: Flickr8k, Flickr30k and MS COCO.
+
+
+
+
+ 
+INTRODUCTION
+This project involved the creation of a functional, deployable web application that automatically generates descriptions or “captions” for uploaded images. It consists of two parts, the web application that hosts and interfaces with the captioning mechanism and the computational engine that actually handles the image description generation.  Not only must caption generation models be powerful enough to solve the computer vision challenges of determining which objects are in an image, but they must also be capable of capturing and expressing their relationships in a natural language. we describe approaches to caption generation that attempt to incorporate a form of attention with two variants: a “hard” attention mechanism and a “soft” attention mechanism.A “soft” deterministic attention mechanism trainable by standard back-propagation methods and “hard” stochastic attention mechanism trainable by maximizing an approximate variational lower bound. 
+ Rather than compress an entire image into a static representation, attention allows for salient features to dynamically come to the forefront as needed. This is especially important when there is a lot of clutter in an image. Using representations(such as those from the to player of a convnet) that distill information in image down to the most salient objects is one effective solution that has been widely adopted in previous work. In this paper, we describe approaches to caption generation that attempt to incorporate a form of attention with two variants: a “hard” attention mechanism and a “soft” attention mechanism. We also show how one advantage of including attention is the ability to visualize what the model “sees”. 
+You saw an image and your brain can easily tell what the image is about, but can a computer tell what the image is representing? Computer vision researchers worked on this a lot and they considered it impossible until now! With the advancement in Deep learning techniques, availability of huge datasets and computer power, we can build models that can generate captions for an image.
+This is what we are going to implement in this Python based project where we will use deep learning techniques of Convolutional Neural Networks and a type of Recurrent Neural Network (LSTM) together.     
+OBJECTIVES
+* Detecting objects using from input image using CNN(Convolutional Neural Network)
+* Converting to natural language using RNN(Recurrent Neural Networks) and LSTM(Long short-term memory).
+* Generating Captions using pre-trained libraries of python such as TensorFlow, Keras.
+ 
+ 
+ 
+ 
+ 
+METHODOLOGY
+3.3.Convolutional Neural Networks
+ 
+In image analysis, many of recent advances in deep learning are built on the work of LeCunet al. who introduced a Convolutional Neural Network (CNN) which had a large impact on the field. A CNN is a type of a neural network that is designed to process an image and represent it with a vector code. The architecture of CNNa draws on fully-connected neural networks. Similarly, a convolutional neural network is a compounded structure of several layers processing signals and propagating them forward.
+
+
+
+
+Recurrent Neural Networks
+ 
+
+
+ Recurrent Neural Network(RNN) are a type of Neural Network where the output from previous step are fed as input to the current step. In traditional neural networks, all the inputs and outputs are independent of each other, but in cases like when it is required to predict the next word of a sentence, the previous words are required and hence there is a need to remember the previous words. Thus RNN came into existence, which solved this issue with the help of a Hidden Layer. The main and most important feature of RNN is Hidden state, which remembers some information about a sequence.
+  
+
+
+
+RNNs are used in a variety of tasks: transforming a static input into a sequence (e.g. image captioning); processing sequences into a static output (e.g. video labelling); or transforming sequences into sequences (e.g. automatic translation).  
+Long short-term memory (LSTM) 
+Long short-term memory (LSTM) is an artificial recurrent neural network (RNN) architecture[1] used in the field of deep learning. LSTM is applicable to tasks such as unsegmented, connected handwriting recognition[2], speech recognition[3][4] and anomaly detection in network traffic or IDS's (intrusion detection systems).
+A common LSTM unit is composed of a cell, an input gate, an output gate and a forget gate. The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell. LSTM networks are well-suited to classifying, processing and making predictions based on time series data, since there can be lags of unknown duration between important events in a time series. Intuitively, the cell is responsible for keeping track of the dependencies between the elements in the input sequence. The input gate controls the extent to which a new value flows into the cell, the forget gate controls the extent to which a value remains in the cell and the output gate controls the extent to which the value in the cell is used to compute the output activation of the LSTM unit. The activation function of the LSTM gates is often the logistic sigmoid function.
+
+
+
+
+
+
+
+
+PROPOSED SYSTEM
+Our model uses two different neural networks to generate the captions. The first neural network is Convolutional Neural Network(CNN), which is used to train the images as well as to detect the objects in the image with the help of various pre-trained models like VGG, Inception or YOLO. 
+The second neural network used is Recurrent Neural Network(RNN) based  Long Short Term Memory(LSTM), which is used to generate captions from the generated object keywords. As, there is lot of data involved to train and validate the model,  generalized machine learning algorithms will not work.
+Deep Learning has been evolved from the recent times to solve the data constraints on Machine Learning algorithms. GPU based computing is required to perform the Deep Learning tasks more effectively. 
+The implementation of the model was done using the Python SciPy environment. Keras 2.0 was used to implement the deep learning model because of the presence of the VGG net which was used for the object identification. 
+ Tensorflow library is installed as a backend for the Keras framework for creating and training deep neural networks. TensorFlow is a deep learning library developed by Google.
+
+
+
+
+
+
+Architecture
+  
+
+ 
+Advantages
+ 
+1. There are various advantages of Image captioning in  multiple disciplines.  It can be used for visually impaired people to understand the environment. 
+2.  It can be used in areas where text is more used and it can be used to infer text from images.  
+3. Image captioning can also be used in self driving cars. 
+4. It can be used by social networks to describe the image being uploaded by the user.  
+5. It can be used in various NLP applications, where insights and summary is needed from the images.
+
+
+
+
+INNOVATION AND CONTRIBUTION TO THE FIELD
